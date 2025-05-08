@@ -1,21 +1,19 @@
 <resources>
     <string name="app_name">Plann.er</string>
-    <string name="nome">Nome</string>
+    <string name="name">Nome</string>
     <string name="email">Email</string>
-    <string name="telefone">Telefone</string>
-    <string name="cadastro_de_usuario">Cadastro de Usuário</string>
-    <string name="botao_adicionar_foto_de_usuario">Botão adicionar foto de usuário</string>
-    <string name="salvar_usuario">Salvar usuário</string>
-    <string name="imagem_logo">Imagem logo</string>
-    <string name="imagem_foto_do_usuario">Imagem foto do usuário</string>
-    <string name="ola_usuario">Olá, <b>%1$s!</b></string>
-    <string name="qual_a_atividade">Qual a atividade?</string>
-    <string name="escolha_a_data">Escolha a data</string>
-    <string name="salvar_atividade">Salvar atividade</string>
-    <string name="escolha_o_horario">Escolha o horário</string>
-    <string name="atividades">Atividades</string>
-    <string name="botao_de_conclusao_de_atividade">Botão de conclusão de atividade</string>
-    <string name="alterar_atividade">Alterar Atividade</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="phone">Telefone</string>
+    <string name="user_registration">Cadastro de Usuário</string>
+    <string name="add_user_photo_button">Botão adicionar foto de usuário</string>
+    <string name="save_user">Salvar usuário</string>
+    <string name="logo_image">Imagem logo</string>
+    <string name="user_photo_image">Imagem foto do usuário</string>
+    <string name="hello_user">Olá, <b>%1$s!</b></string>
+    <string name="what_is_the_activity">Qual a atividade?</string>
+    <string name="choose_the_date">Escolha a data</string>
+    <string name="save_activity">Salvar atividade</string>
+    <string name="choose_the_time">Escolha o horário</string>
+    <string name="activities">Atividades</string>
+    <string name="activity_completion_button">Botão de conclusão de atividade</string>
+    <string name="change_activity">Alterar Atividade</string>
 </resources>

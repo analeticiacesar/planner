@@ -1,31 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_margin="@dimen/md_16dp"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.UserRegistrationFragment">
 
     <TextView
         android:id="@+id/textViewUserRegistrationTitle"
+        style="@style/Title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/Title"
-        android:text="@string/cadastro_de_usuario"
-        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/user_registration"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/textViewUserRegistrationTitle"
+        app:layout_constraintBottom_toTopOf="@id/buttonSaveUser"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/buttonSaveUser">
+        app:layout_constraintTop_toBottomOf="@id/textViewUserRegistrationTitle">
 
         <androidx.cardview.widget.CardView
             android:layout_width="@dimen/huge_128dp"
@@ -36,11 +36,11 @@
                 android:id="@+id/imageViewAddPhoto"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/img_add_button"
-                android:contentDescription="@string/botao_adicionar_foto_de_usuario"/>
+                android:contentDescription="@string/add_user_photo_button"
+                android:src="@drawable/img_add_button" />
 
         </androidx.cardview.widget.CardView>
-        
+
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/textInputLayoutName"
             android:layout_width="match_parent"
@@ -51,8 +51,8 @@
                 android:id="@+id/textInputEditTextName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/nome"
-                android:inputType="textPersonName"/>
+                android:hint="@string/name"
+                android:inputType="textPersonName" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -67,7 +67,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/email"
-                android:inputType="textEmailAddress"/>
+                android:inputType="textEmailAddress" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -81,8 +81,8 @@
                 android:id="@+id/textInputEditTextPhone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/telefone"
-                android:inputType="phone"/>
+                android:hint="@string/phone"
+                android:inputType="phone" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -92,9 +92,9 @@
         android:id="@+id/buttonSaveUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/salvar_usuario"
+        android:text="@string/save_user"
         android:textColor="@color/lime_950"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

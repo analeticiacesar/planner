@@ -1,14 +1,153 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/md_16dp"
     tools:context=".ui.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="match_parent">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/imageViewLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_logo"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            android:contentDescription="@string/logo_image"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardViewUserPhoto"
+            android:layout_width="@dimen/xl_64dp"
+            android:layout_height="@dimen/xl_64dp"
+            android:layout_marginTop="@dimen/md_16dp"
+            app:cardCornerRadius="@dimen/xm_32dp"
+            app:strokeColor="@color/zinc_700"
+            app:strokeWidth="@dimen/xxs_2dp"
+            app:layout_constraintTop_toBottomOf="@id/imageViewLogo"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageView
+                android:id="@+id/imageViewUserPhoto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/img_this_person_does_not_exist"
+                android:contentDescription="@string/user_photo_image"/>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <TextView
+            android:id="@+id/textViewUserName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/hello_user"
+            app:layout_constraintStart_toEndOf="@id/materialCardViewUserPhoto"
+            app:layout_constraintTop_toTopOf="@id/materialCardViewUserPhoto"
+            app:layout_constraintBottom_toBottomOf="@id/materialCardViewUserPhoto"
+            android:textSize="16sp"
+            android:layout_marginStart="@dimen/md_16dp"/>
+
+        <LinearLayout
+            android:id="@+id/linearLayoutNewPlannerActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/sm_8dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/materialCardViewUserPhoto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutNewPlannerActivityName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:startIconDrawable="@drawable/ic_tag"
+                android:layout_marginBottom="@dimen/sm_8dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputEditTextNewPlannerActivityName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/what_is_the_activity"
+                    android:inputType="textCapSentences"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutNewPlannerActivityDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/sm_8dp"
+                app:startIconDrawable="@drawable/ic_calendar">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputEditTextNewPlannerActivityDate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/choose_the_date" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayoutNewPlannerActivityTime"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/sm_8dp"
+                app:startIconDrawable="@drawable/ic_clock">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/textInputEditTextNewPlannerActivityTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/choose_the_time" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/buttonSaveNewPlannerActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linearLayoutNewPlannerActivity"
+            android:layout_marginTop="@dimen/md_16dp"
+            android:textColor="@color/lime_950"
+            android:text="@string/save_activity"/>
+
+        <TextView
+            android:id="@+id/textViewPlannerActivitiesTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Title"
+            android:layout_marginTop="@dimen/md_16dp"
+            android:text="@string/activities"
+            app:layout_constraintTop_toBottomOf="@id/buttonSaveNewPlannerActivity"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewPlannerActivities"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/md_16dp"
+            app:layout_constraintTop_toBottomOf="@id/textViewPlannerActivitiesTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:itemCount="8"
+            tools:listitem="@layout/item_planner_activity"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.core.widget.NestedScrollView>
